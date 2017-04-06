@@ -1,9 +1,9 @@
 function updateCurrentLang() {
   var currentLang = document.querySelector('[data-current-lang]');
 
-  chrome.storage.sync.get('language', function(options) {
-    if (options.language) {
-      currentLang.innerHTML = options.language;
+  chrome.storage.sync.get('displaylang', function(options) {
+    if (options.displaylang) {
+      currentLang.innerHTML = options.displaylang;
     } else {
       currentLang.innerHTML = 'default';
     }
@@ -12,7 +12,7 @@ function updateCurrentLang() {
 
 document.querySelectorAll('a[data-lang]').forEach(function(element) {
   element.addEventListener('click', function(event) {
-    chrome.storage.sync.set({'language': event.target.getAttribute('data-lang')}, function() {
+    chrome.storage.sync.set({'language': event.target.getAttribute('data-lang'), 'displaylang': event.target.getAttribute('data-display-lang')}, function() {
       updateCurrentLang();
     });
   });

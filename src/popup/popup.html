@@ -2,12 +2,22 @@
 
 <html>
   <head>
+    <meta charset="UTF-8">
     <style>
       body {
         text-align: center;
-        font-family: Arial, sans-serif;
-        font-size: 1.2em;
-        padding: 10px;
+        font-family: Helvetica, Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+        font-size: 1.0em;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      h4 {
+        color: white;
+        font-weight: normal;
+        padding: 15px 0px 12px 0px;
+        margin: 0px 0px 2px 0px;
+        background-color: #30373b;
       }
 
       ul {
@@ -17,29 +27,30 @@
       }
 
       ul li {
-        padding: 10px;
-        margin: 2px;
+        padding: 5px;
+        margin: 0px;
+      }
+
+      ul li:hover {
+        background-color: #F5F5F5;
       }
 
       a {
         text-decoration: none;
+        color: #4682B4;
+        display:block
       }
 
-      a:hover {
-        text-decoration: underline;
-      }
     </style>
   </head>
-  <body style="width: 300px;">
-    <h3>Current language: <span data-current-lang>loading...</span></h3>
-
-    <hr>
+  <body style="width: 280px;">
+    <h4>Current language: <span data-current-lang>loading...</span></h4>
 
     <ul>
-      <li><a href="#" data-lang>English (Original)</a></li>
-      <li><a href="#" data-lang="fr">Français</a></li>
-      <li><a href="#" data-lang="de-DE">Deutsch (Deutschland)</a></li>
-      <li><a href="#" data-lang="ja">日本語</a></li>
+      <li><a href="#" data-lang data-display-lang="English">English (Default)</a></li>
+      <li><a href="#" data-lang="fr" data-display-lang="Français">Français</a></li>
+      <li><a href="#" data-lang="de-DE" data-display-lang="Deutsch">Deutsch (Deutschland)</a></li>
+      <li><a href="#" data-lang="ja" data-display-lang="日本語">日本語</a></li>
     </ul>
 
     <script src="popup.js"></script>
